@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+moviepy
+python-multipart
+rembg
+onnxruntime
