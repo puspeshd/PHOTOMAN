@@ -70,16 +70,19 @@ function LoginForm({ onLoginSuccess }) {
 
   return (
     <Container style={{ maxWidth: "400px", marginTop: "50px" }}>
-      <div className="flex justify-center mb-4">
+      <div className="justify-content-md-center">
         <img
           src="logo.png" // <-- Replace with your logo path
           alt=""
-          className="h-16 w-auto object-contain"
+          className="h-auto w-auto object-contain "
         />
+        <br></br>
+        <br></br>
+        <br></br>
         </div>
       <Row className="justify-content-md-center">
         <Col>
-          <h2 className="mb-4 text-center">User Login</h2>
+          
           {error && <Alert variant="danger">{error}</Alert>}
           {message && <Alert variant="success">{message}</Alert>}
 
