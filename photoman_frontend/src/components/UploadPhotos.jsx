@@ -30,13 +30,13 @@ function UploadPhotos({ user, setUser }) {
     async function fetchVideos() {
       try {
         const res = await fetch(
-          `http://localhost:8000/videos?user_id=${user.id}`
+          `http://0.0.0.0:8000/videos?user_id=${user.id}`
         );
         const data = await res.json();
         if (Array.isArray(data.video_urls)) {
           const urls = data.video_urls.map(
             (filename) =>
-              `http://localhost:8000/download/${user.id}/${filename}`
+              `http://0.0.0.0:8000/download/${user.id}/${filename}`
           );
           setVideoUrls(urls);
         }
@@ -144,7 +144,7 @@ function UploadPhotos({ user, setUser }) {
     });
 
     try {
-      const res = await fetch("http://localhost:8000/upload", {
+      const res = await fetch("http://0.0.0.0:8000/upload", {
         method: "POST",
         body: formData,
       });
