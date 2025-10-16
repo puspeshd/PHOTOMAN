@@ -68,7 +68,7 @@ export default function ApproverPage({ user, setUser }) {
 
   // Load users on mount
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/get_users")
+    fetch("http://localhost:8000/get_users")
       .then((res) => res.json())
       .then((data) => setUsers(data.users || []))
       .catch((err) => console.error("Error fetching users:", err));
@@ -78,7 +78,7 @@ export default function ApproverPage({ user, setUser }) {
     setSelectedUser(userItem);
     setFolders([]);
     setPhotos([]);
-    fetch(`http://127.0.0.1:8000/get_folders?user_id=${userItem.id}`)
+    fetch(`http://localhost:8000/get_folders?user_id=${userItem.id}`)
       .then((res) => res.json())
       .then((data) => setFolders(data.folders || []))
       .catch((err) => console.error("Error fetching folders:", err));
@@ -88,7 +88,7 @@ export default function ApproverPage({ user, setUser }) {
     setSelectedFolder(folder);
     setPhotos([]);
     fetch(
-      `http://127.0.0.1:8000/get_photos?user_id=${selectedUser.id}&folder=${folder}`
+      `http://localhost:8000/get_photos?user_id=${selectedUser.id}&folder=${folder}`
     )
       .then((res) => res.json())
       .then((data) => setPhotos(data.photos || []))
@@ -148,7 +148,7 @@ export default function ApproverPage({ user, setUser }) {
     formData.append("user_id", selectedUser.id);
     formData.append("folder", selectedFolder);
     setLoading(true);
-    await fetch("http://127.0.0.1:8000/approve_photos", {
+    await fetch("http://localhost:8000/approve_photos", {
       method: "POST",
       body: formData,
     });

@@ -40,7 +40,7 @@ function LoginForm({ onLoginSuccess }) {
         setMessage(`Welcome, ${data.user.first_name}!`);
 
         if (role === "approver") {
-          const approverRes = await fetch("http://127.0.0.1:8000/approvercheck", {
+          const approverRes = await fetch("http://localhost:8000/approvercheck", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email: form.email }),

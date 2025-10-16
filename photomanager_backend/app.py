@@ -349,7 +349,7 @@ def get_photos(user_id: int, folder: str):
     photos = []
     for filename in os.listdir(folder_path):
         if filename.lower().endswith((".jpg", ".jpeg", ".png")):
-            photos.append(f"http://127.0.0.1:8000/get_photo/{user_id}/{folder}/{filename}")
+            photos.append(f"http://localhost:8000/get_photo/{user_id}/{folder}/{filename}")
     return {"photos": photos}
 
 
@@ -481,7 +481,7 @@ async def approve_photos(
     #         jf = json.load(json_f)
     # except FileNotFoundError:
     #         jf = []
-    # jf.append(f"http://127.0.0.1:8000/download/{user_id}/{video_name}")
+    # jf.append(f"http://localhost:8000/download/{user_id}/{video_name}")
     # with open(f"{user_id}.json","w") as json_f:
     #     json.dump(jf,json_f)
     video_dir_user =os.listdir(f'approved_videos/{user_id}/')
