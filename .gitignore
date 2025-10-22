@@ -1,2 +1,7 @@
 photomanager_backend/users.db
 photomanager_backend/__pycache__/*
+photomanager_backend/approved_uploads/*
+photomanager_backend/approved_videos/*
+photomanager_backend/uploads/*
+photomanager_backend/processed_uploads/*
+
