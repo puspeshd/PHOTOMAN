@@ -194,7 +194,7 @@ function UploadPhotos({ user, setUser }) {
       >
         <div className="flex justify-center mb-4">
           <img
-            src="./assets/react.svg" // your logo path
+            src="logo.png" // your logo path
             alt="Logo"
             className="h-16 w-auto object-contain"
           />
