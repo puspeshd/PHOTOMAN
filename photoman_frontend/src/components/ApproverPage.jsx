@@ -155,7 +155,7 @@ export default function ApproverPage({ user, setUser }) {
 
     alert("✅ Photos approved and uploaded!");
     setLoading(false);
-    window.location.reload();
+    //window.location.reload();
   };
 
   const navigateme = (screen) => {
