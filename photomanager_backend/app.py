@@ -360,7 +360,9 @@ def get_photo(user_id: int, folder: str, filename: str):
     file_path = os.path.join("processed_uploads", str(user_id), folder, filename)
     if not os.path.exists(file_path):
         raise HTTPException(status_code=404, detail="File not found")
-    return FileResponse(file_path)
+
+    headers = {"Access-Control-Allow-Origin": "*"}  # ✅ Add this
+    return FileResponse(file_path, headers=headers)
 
 @app.post("/approvercheck")
 def approver_check(user: ApproverCheckRequest):
